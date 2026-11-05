@@ -2,888 +2,1067 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gosip Highlight | Celebrity Entertainment</title>
-
-<meta name="description" content="Discover Hollywood celebrities, celebrity biographies, music legends and entertainment stories.">
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-<!-- AUTOMATIC YOUTUBE VIDEOS -->
-
-<section class="youtube-section">
-
-  <div class="section-heading">
-
-    <h2>Latest Videos
-      <span style="color:#e50914">▶</span>
-    </h2>
-
-    <p class="youtube-description">
-      Watch the latest celebrity stories from Gosip Highlight.
-    </p>
-
-  </div>
-
-  <div class="youtube-player">
-
-    <iframe
-      src="https://www.youtube.com/embed/videoseries?list=UULDV38h6II7jhEyik58Cyog"
-      title="Gosip Highlight Latest YouTube Videos"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen>
-    </iframe>
-
-  </div>
-
-  <a class="youtube-subscribe"
-     href="https://www.youtube.com/@gosiphighlight-d8"
-     target="_blank"
-     rel="noopener noreferrer">
-     Subscribe on YouTube
-  </a>
-
-</section>
-html {
- <section id="videos" class="streaming-section">
-
-  <div class="streaming-heading">
-    <span class="section-label">GOSIP HIGHLIGHT ORIGINALS</span>
-    <h2>Latest Videos <span>▶</span></h2>
-    <p>Hollywood, celebrities, music and stories behind the fame.</p>
-  </div>
-
-  <div class="featured-video">
-    <div class="featured-content">
-      <span class="trending-label">🔥 FEATURED STORY</span>
-      <h2>THE STORIES BEHIND THE STARS</h2>
-      <p>Discover the untold stories, unforgettable moments and fascinating lives of your favourite celebrities.</p>
-      <a href="https://www.youtube.com/@gosiphighlight-d8"
-         target="_blank" rel="noopener noreferrer" class="watch-button">
-         ▶ Watch on YouTube
-      </a>
-    </div>
-  </div>
-
-  <h3 class="row-title">Celebrity Stories</h3>
-  <div class="video-row">
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/35101c/ffffff?text=Celebrity+Stories" alt="Celebrity stories">
-      <span>Celebrity Stories</span>
-    </a>
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/251525/ffffff?text=Hollywood+Stars" alt="Hollywood stars">
-      <span>Hollywood Stars</span>
-    </a>
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/301020/ffffff?text=Behind+The+Fame" alt="Behind the fame">
-      <span>Behind The Fame</span>
-    </a>
-  </div>
-
-  <h3 class="row-title">Hollywood Highlights</h3>
-  <div class="video-row">
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/151525/ffffff?text=Hollywood+News" alt="Hollywood news">
-      <span>Hollywood News</span>
-    </a>
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/35101c/ffffff?text=Famous+Actors" alt="Famous actors">
-      <span>Famous Actors</span>
-    </a>
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/25202b/ffffff?text=Entertainment" alt="Entertainment">
-      <span>Entertainment</span>
-    </a>
-  </div>
-
-  <h3 class="row-title">Music Legends 🎵</h3>
-  <div class="video-row">
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/35101c/ffffff?text=Music+Legends" alt="Music legends">
-      <span>Music Legends</span>
-    </a>
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/201020/ffffff?text=Iconic+Performances" alt="Iconic performances">
-      <span>Iconic Performances</span>
-    </a>
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/500x280/25202b/ffffff?text=Music+Stories" alt="Music stories">
-      <span>Music Stories</span>
-    </a>
-  </div>
-
-</section>
-
-/* NAVIGATION */
-
-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-  padding: 24px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(0,0,0,.9), transparent);
-}
-
-.logo {
-  font-size: 27px;
-  font-weight: 900;
-  color: #e50914;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #e50914;
-}
-
-.subscribe {
-  background: #e50914;
-  padding: 11px 18px;
-  border-radius: 5px;
-}
-
-/* HERO SECTION */
-
-.hero {
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  padding: 150px 7% 90px;
-
-  background:
-    linear-gradient(to right, #080808 5%, rgba(8,8,8,.85) 40%, rgba(8,8,8,.1) 100%),
-    linear-gradient(to top, #080808 1%, transparent 65%),
-    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=85");
-
-  background-size: cover;
-  background-position: center;
-}
-
-.hero-content {
-  max-width: 650px;
-}
-
-.hero-label {
-  color: #e50914;
-  font-weight: bold;
-  letter-spacing: 3px;
-  font-size: 13px;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 6vw, 75px);
-  line-height: 1.05;
-  font-weight: 900;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.hero h1 span {
-  color: #e50914;
-}
-
-.hero p {
-  color: #ddd;
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 550px;
-  margin-bottom: 25px;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-}
-
-.watch-btn,
-.more-btn {
-  display: inline-block;
-  padding: 15px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.watch-btn {
-  background: #e50914;
-  color: white;
-}
-
-.watch-btn:hover {
-  background: #b20710;
-}
-
-.more-btn {
-  background: rgba(100,100,100,.7);
-  color: white;
-}
-
-.more-btn:hover {
-  background: rgba(130,130,130,.8);
-}
-
-/* VIDEO SECTIONS */
-
-main {
-  margin-top: -25px;
-  position: relative;
-  z-index: 2;
-}
-
-.streaming-section {
-  padding: 35px 5%;
-}
-
-.section-heading {
-  margin-bottom: 20px;
-}
-
-.section-heading h2 {
-  font-size: 25px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.section-heading p {
-  color: #999;
-  font-size: 14px;
-}
-
-/* HORIZONTAL VIDEO ROWS */
-
-.video-row {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding: 12px 3px 25px;
-  scroll-behavior: smooth;
-}
-
-.video-row::-webkit-scrollbar {
-  height: 6px;
-}
-
-.video-row::-webkit-scrollbar-thumb {
-  background: #444;
-  border-radius: 10px;
-}
-
-.video-card {
-  flex: 0 0 280px;
-  background: #181818;
-  border-radius: 7px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.video-card:hover {
-  transform: scale(1.06);
-  box-shadow: 0 8px 25px rgba(0,0,0,.7);
-  z-index: 2;
-}
-
-.video-card img {
-  display: block;
-  width: 100%;
-  height: 158px;
-  object-fit: cover;
-  background: #252525;
-}
-
-.video-info {
-  padding: 14px;
-}
-
-.video-info h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.video-info p {
-  font-size: 13px;
-  color: #aaa;
-  line-height: 1.5;
-}
-
-.video-tag {
-  color: #e50914;
-  font-size: 11px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 7px;
-  display: block;
-}
-
-/* FEATURED STORY */
-
-.featured-banner {
-  margin: 20px 5% 35px;
-  padding: 55px 40px;
-  border-radius: 10px;
-  background:
-    linear-gradient(90deg, #17080c, rgba(20,5,10,.8)),
-    url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1500&q=80");
-  background-position: center;
-  background-size: cover;
-}
-
-.featured-banner h2 {
-  font-size: clamp(28px, 4vw, 42px);
-  margin: 12px 0;
-}
-
-.featured-banner p {
-  color: #ccc;
-  line-height: 1.7;
-  max-width: 550px;
-  margin-bottom: 22px;
-}
-
-/* PHOTOS */
-
-.photo-section {
-  padding: 45px 5%;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
-}
-
-.photo-card {
-  background: #191919;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.photo-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-}
-
-.photo-card h3 {
-  padding: 15px;
-}
-
-/* CONTACT */
-
-.contact-section {
-  padding: 50px 5%;
-  background: #111;
-}
-
-.contact-section p {
-  color: #aaa;
-  margin: 12px 0 20px;
-}
-
-.contact-form {
-  max-width: 600px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 14px;
-  margin: 9px 0;
-  background: #222;
-  color: white;
-  border: 1px solid #444;
-  border-radius: 5px;
-  font-size: 15px;
-}
-
-.contact-form button {
-  background: #e50914;
-  color: white;
-  border: 0;
-  padding: 14px 25px;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #b20710;
-}
-
-/* FOOTER */
-
-footer {
-  background: #080808;
-  border-top: 1px solid #252525;
-  text-align: center;
-  padding: 35px 15px;
-  color: #888;
-  line-height: 2;
-}
-
-footer a {
-  color: #e50914;
-  text-decoration: none;
-}
-
-/* MOBILE DESIGN */
-
-@media(max-width: 700px) {
-
-  header {
-    padding: 18px 5%;
-    align-items: flex-start;
-    gap: 15px;
-    flex-direction: column;
-  }
-
-  .logo {
-    font-size: 23px;
-  }
-
-  nav {
-    gap: 15px;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    font-size: 12px;
-  }
-
-  .subscribe {
-    padding: 7px 10px;
-  }
-
-  .hero {
-    min-height: 580px;
-    padding: 170px 6% 70px;
-    background-position: center;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-  }
-
-  .hero p {
-    font-size: 15px;
-  }
-
-  .video-card {
-    flex: 0 0 230px;
-  }
-
-  .video-card img {
-    height: 135px;
-  }
-
-  .streaming-section {
-    padding: 25px 5%;
-  }
-
-  .featured-banner {
-    padding: 35px 22px;
-  }
-
-  .section-heading h2 {
-    font-size: 21px;
-  }
-}
-/* AUTOMATIC YOUTUBE VIDEOS */
-
-.youtube-section {
-  padding: 45px 5%;
-  background: #080808;
-}
-
-.youtube-player {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #181818;
-}
-
-.youtube-player iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-.youtube-description {
-  color: #aaa;
-  margin: 12px 0 22px;
-  line-height: 1.6;
-}
-
-.youtube-subscribe {
-  display: inline-block;
-  background: #e50914;
-  color: white;
-  padding: 13px 22px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 20px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Gosip Highlight | Celebrity News & Entertainment</title>
+  <meta name="description" content="Discover celebrity news, Hollywood stories, music legends and entertainment highlights from Gosip Highlight.">
+
+  <style>
+    /* =========================
+       GENERAL WEBSITE STYLING
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    :root {
+      --red: #e50914;
+      --red-light: #ff2633;
+      --dark: #080808;
+      --card: #181818;
+      --muted: #b8b8b8;
+    }
+
+    /* =========================
+       NAVIGATION BAR
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 18px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(to bottom, rgba(0,0,0,.95), rgba(0,0,0,.45));
+      transition: background .3s ease;
+    }
+
+    header.scrolled {
+      background: #080808;
+      box-shadow: 0 3px 15px rgba(0,0,0,.5);
+    }
+
+    .logo {
+      color: var(--red);
+      font-size: 27px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    nav a {
+      color: #eeeeee;
+      font-size: 14px;
+      font-weight: bold;
+      transition: color .3s;
+    }
+
+    nav a:hover {
+      color: var(--red-light);
+    }
+
+    .subscribe-nav {
+      background: var(--red);
+      padding: 11px 18px;
+      border-radius: 4px;
+      color: white;
+    }
+
+    .subscribe-nav:hover {
+      background: #b80710;
+      color: white;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 29px;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      padding: 130px 7% 80px;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.75) 45%, rgba(0,0,0,.15) 100%),
+        linear-gradient(0deg, #080808 0%, transparent 40%),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=85");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-label {
+      color: var(--red-light);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 4px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.04;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      color: #dddddd;
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 570px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-red:hover {
+      background: #b80710;
+      transform: translateY(-2px);
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,.18);
+      color: white;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .btn-light:hover {
+      background: rgba(255,255,255,.3);
+    }
+
+    /* =========================
+       COMMON SECTION STYLING
+    ========================== */
+
+    .section {
+      padding: 55px 5%;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 23px;
+    }
+
+    .section-heading h2 {
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .section-heading h2 span {
+      color: var(--red);
+    }
+
+    .section-heading a {
+      color: var(--red-light);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .section-description {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: -10px;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       FEATURED STORY
+    ========================== */
+
+    .featured-video {
+      min-height: 340px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding: 38px;
+      border-radius: 8px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.95), rgba(0,0,0,.2)),
+        linear-gradient(0deg, rgba(0,0,0,.8), transparent),
+        url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=85");
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 45px;
+    }
+
+    .featured-content {
+      max-width: 560px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .trending-label {
+      color: var(--red-light);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 13px;
+    }
+
+    .featured-content h2 {
+      font-size: clamp(27px, 4vw, 43px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .featured-content p {
+      color: #dddddd;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    /* =========================
+       YOUTUBE PLAYLIST
+    ========================== */
+
+    .youtube-section {
+      padding: 45px 5%;
+      background: #101010;
+    }
+
+    .youtube-player {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border: none;
+      border-radius: 8px;
+      background: #000;
+    }
+
+    .youtube-description {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-top: 17px;
+    }
+
+    .youtube-subscribe {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--red);
+      color: white;
+      padding: 13px 20px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .youtube-subscribe:hover {
+      background: #b80710;
+    }
+
+    /* =========================
+       NETFLIX-STYLE VIDEO ROWS
+    ========================== */
+
+    .streaming-section {
+      padding: 45px 5%;
+    }
+
+    .streaming-heading {
+      margin-bottom: 25px;
+    }
+
+    .section-label {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .row-title {
+      font-size: 23px;
+      font-weight: 900;
+      margin: 32px 0 17px;
+    }
+
+    .video-row {
+      display: grid;
+      grid-auto-columns: minmax(220px, 1fr);
+      grid-auto-flow: column;
+      grid-template-rows: 1fr;
+      gap: 17px;
+      overflow-x: auto;
+      padding: 8px 2px 22px;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+      scrollbar-color: #555 #151515;
+    }
+
+    .video-card {
+      min-width: 0;
+      background: var(--card);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .video-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 25px rgba(229,9,20,.25);
+    }
+
+    .video-card a {
+      display: block;
+      height: 100%;
+    }
+
+    .video-card img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #222;
+    }
+
+    .video-info {
+      padding: 14px;
+    }
+
+    .video-tag {
+      color: var(--red-light);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .video-info h3 {
+      font-size: 15px;
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+
+    .video-info p {
+      color: #aaaaaa;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-top: 8px;
+    }
+
+    /* =========================
+       PHOTO GALLERY
+    ========================== */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      min-height: 180px;
+      background: #181818;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    /* =========================
+       ABOUT / CHANNEL SECTION
+    ========================== */
+
+    .about-section {
+      padding: 65px 7%;
+      background: linear-gradient(120deg, #191919, #090909);
+      text-align: center;
+    }
+
+    .about-section h2 {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .about-section h2 span {
+      color: var(--red);
+    }
+
+    .about-section p {
+      max-width: 750px;
+      margin: auto;
+      color: #c5c5c5;
+      line-height: 1.9;
+    }
+
+    /* =========================
+       CONTACT SECTION
+    ========================== */
+
+    .contact-section {
+      padding: 60px 5%;
+      text-align: center;
+    }
+
+    .contact-section h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .contact-section p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 35px 5%;
+      background: #050505;
+      border-top: 1px solid #252525;
+      text-align: center;
+    }
+
+    .footer-logo {
+      color: var(--red);
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 13px;
+    }
+
+    footer p {
+      color: #888888;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .footer-links a {
+      color: #cccccc;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      color: var(--red);
+    }
+
+    /* =========================
+       MOBILE RESPONSIVE DESIGN
+    ========================== */
+
+    @media (max-width: 900px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .video-row {
+        grid-auto-columns: minmax(210px, 42%);
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        padding: 15px 5%;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        padding: 22px 5%;
+        background: #101010;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        border-top: 1px solid #292929;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hero {
+        min-height: 590px;
+        padding: 120px 6% 65px;
+        background-position: center;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .section,
+      .streaming-section,
+      .youtube-section {
+        padding: 35px 5%;
+      }
+
+      .section-heading h2 {
+        font-size: 21px;
+      }
+
+      .featured-video {
+        min-height: 320px;
+        padding: 22px;
+      }
+
+      .video-row {
+        grid-auto-columns: minmax(205px, 75%);
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .gallery-item,
+      .gallery-item img {
+        min-height: 130px;
+      }
+
+      .about-section h2,
+      .contact-section h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-<header>
+  <header id="site-header">
+    <a href="#home" class="logo">GOSIP <span>HIGHLIGHT</span></a>
 
-  <a href="#home" class="logo">GOSIP HIGHLIGHT</a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu">
+      ☰
+    </button>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#videos">TV Shows</a>
-    <a href="#photos">Photos</a>
-    <a href="#contact">Contact</a>
-    <a class="subscribe"
-       href="https://www.youtube.com/@gosiphighlight-d8"
-       target="_blank"
-       rel="noopener noreferrer">Subscribe</a>
-  </nav>
+    <nav id="main-nav">
+      <a href="#home">Home</a>
+      <a href="#latest">Latest Videos</a>
+      <a href="#videos">Celebrity Stories</a>
+      <a href="#photos">Photos</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a class="subscribe-nav" href="https://www.youtube.com/@gosiphighlight-d8" target="_blank" rel="noopener">Subscribe</a>
+    </nav>
+  </header>
 
-</header>
 
-<!-- HERO -->
+  <!-- =========================
+       HERO / HOMEPAGE
+  ========================== -->
 
-<div class="hero" id="home">
+  <main>
 
-  <div class="hero-content">
+    <section class="hero" id="home">
+      <div class="hero-content">
 
-    <div class="hero-label">GOSIP HIGHLIGHT ORIGINALS</div>
+        <div class="hero-label">Welcome to Gosip Highlight</div>
 
-    <h1>
-      THE WORLD OF
-      <span>CELEBRITY STORIES</span>
-    </h1>
+        <h1>
+          The Stories<br>
+          Behind <span>Fame.</span>
+        </h1>
+
+        <p>
+          Discover the stories behind your favorite celebrities.
+          From Hollywood headlines and music legends to unforgettable
+          moments in entertainment, we bring the stories to you.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#latest" class="btn btn-red">▶ Watch Latest Videos</a>
+          <a href="#about" class="btn btn-light">Discover More</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         LATEST YOUTUBE PLAYLIST
+    ========================== -->
+
+    <section class="youtube-section" id="latest">
+
+      <div class="section-heading">
+        <h2><span>Latest</span> Videos</h2>
+        <a href="https://www.youtube.com/@gosiphighlight-d8/videos" target="_blank" rel="noopener">View YouTube Channel ↗</a>
+      </div>
+
+      <iframe
+        class="youtube-player"
+        src="https://www.youtube.com/embed/videoseries?list=UULDV38h6II7jhEyik58Cyog"
+        title="Gosip Highlight YouTube videos"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+
+      <p class="youtube-description">
+        Watch entertainment stories, celebrity updates, music features
+        and the latest videos from Gosip Highlight.
+      </p>
+
+      <a class="youtube-subscribe"
+         href="https://www.youtube.com/@gosiphighlight-d8?sub_confirmation=1"
+         target="_blank" rel="noopener">
+        Subscribe to Gosip Highlight
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         CELEBRITY STORIES
+    ========================== -->
+
+    <section class="streaming-section" id="videos">
+
+      <div class="streaming-heading">
+        <div class="section-label">Featured Entertainment</div>
+        <h2>Celebrity Stories</h2>
+      </div>
+
+      <div class="featured-video">
+        <div class="featured-content">
+
+          <div class="trending-label">GOSIP HIGHLIGHT ORIGINAL</div>
+
+          <h2>The Stories Behind the World's Biggest Stars</h2>
+
+          <p>
+            Explore the moments, decisions and stories that shaped
+            the lives and careers of some of the world's most talked-about celebrities.
+          </p>
+
+          <a href="https://www.youtube.com/@gosiphighlight-d8/videos"
+             class="btn btn-red" target="_blank" rel="noopener">
+            ▶ Explore Stories
+          </a>
+
+        </div>
+      </div>
+
+
+      <h3 class="row-title">Latest Celebrity Stories</h3>
+
+      <div class="video-row">
+
+        <div class="video-card">
+          <a href="https://youtu.be/v3q4RKjyz4w" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/v3q4RKjyz4w/hqdefault.jpg"
+                 alt="The Music Industry Has a Rich Kid Problem"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Music Industry</span>
+              <h3>The Music Industry Has a Rich Kid Problem</h3>
+              <p>Watch the full story on YouTube.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video-card">
+          <a href="https://youtu.be/t9BIiBM0wvI" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/t9BIiBM0wvI/hqdefault.jpg"
+                 alt="How Will Smith Accidentally Destroyed His Own Mask"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Hollywood</span>
+              <h3>How Will Smith Accidentally Destroyed His Own Mask</h3>
+              <p>Watch the full story on YouTube.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video-card">
+          <a href="https://youtu.be/5a-kA7QCzLg" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/5a-kA7QCzLg/hqdefault.jpg"
+                 alt="Why Do People Believe Michael Jackson Is Alive?"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Music Legend</span>
+              <h3>Why Do People Believe Michael Jackson Is Alive?</h3>
+              <p>Watch the full story on YouTube.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- HOLLYWOOD HIGHLIGHTS -->
+
+      <h3 class="row-title">Hollywood Highlights</h3>
+
+      <div class="video-row">
+
+        <div class="video-card">
+          <a href="https://www.youtube.com/@gosiphighlight-d8/videos" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80"
+                 alt="Hollywood cinema"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Hollywood</span>
+              <h3>Hollywood Stories and Celebrity Moments</h3>
+              <p>Discover more entertainment stories.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video-card">
+          <a href="https://www.youtube.com/@gosiphighlight-d8/videos" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=700&q=80"
+                 alt="Film production"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Film & TV</span>
+              <h3>Famous Stars and Their Career Journeys</h3>
+              <p>Explore more stories from entertainment.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video-card">
+          <a href="https://www.youtube.com/@gosiphighlight-d8/videos" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80"
+                 alt="Stage performance"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Celebrity News</span>
+              <h3>Unforgettable Moments in Show Business</h3>
+              <p>Explore more stories from Gosip Highlight.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+
+      <!-- MUSIC LEGENDS -->
+
+      <h3 class="row-title">Music Legends 🎵</h3>
+
+      <div class="video-row">
+
+        <div class="video-card">
+          <a href="https://www.youtube.com/@gosiphighlight-d8/videos" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80"
+                 alt="Singer performing on stage"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Music</span>
+              <h3>The Voices That Changed Music History</h3>
+              <p>Discover more music stories.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video-card">
+          <a href="https://www.youtube.com/@gosiphighlight-d8/videos" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=700&q=80"
+                 alt="Live music concert"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Legends</span>
+              <h3>Unforgettable Performances and Music Legends</h3>
+              <p>Explore more entertainment stories.</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="video-card">
+          <a href="https://www.youtube.com/@gosiphighlight-d8/videos" target="_blank" rel="noopener">
+            <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=700&q=80"
+                 alt="Concert lights"
+                 loading="lazy">
+            <div class="video-info">
+              <span class="video-tag">Pop Culture</span>
+              <h3>The Biggest Moments in Pop Culture</h3>
+              <p>Explore more entertainment stories.</p>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PHOTO GALLERY
+    ========================== -->
+
+    <section class="section" id="photos">
+
+      <div class="section-heading">
+        <h2>Entertainment <span>Gallery</span></h2>
+      </div>
+
+      <p class="section-description">
+        A visual collection celebrating music, movies, performances and entertainment.
+      </p>
+
+      <div class="gallery">
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80"
+               alt="Live entertainment event" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=700&q=80"
+               alt="Music concert" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80"
+               alt="Cinema and film" loading="lazy">
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=700&q=80"
+               alt="Concert stage lights" loading="lazy">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT GOSIP HIGHLIGHT
+    ========================== -->
+
+    <section class="about-section" id="about">
+
+      <h2>About <span>Gosip Highlight</span></h2>
+
+      <p>
+        Gosip Highlight is your destination for celebrity stories,
+        Hollywood entertainment, music legends and pop culture.
+        We explore the stories behind famous names, memorable careers
+        and the moments that keep audiences talking.
+        Subscribe to our YouTube channel and join the conversation.
+      </p>
+
+      <br>
+
+      <a href="https://www.youtube.com/@gosiphighlight-d8?sub_confirmation=1"
+         class="btn btn-red" target="_blank" rel="noopener">
+        Subscribe on YouTube
+      </a>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+
+    <section class="contact-section" id="contact">
+
+      <h2>Stay Connected</h2>
+
+      <p>
+        Enjoy our stories? Subscribe to Gosip Highlight on YouTube
+        and stay connected with the latest entertainment videos.
+      </p>
+
+      <a href="https://www.youtube.com/@gosiphighlight-d8"
+         class="btn btn-red" target="_blank" rel="noopener">
+        Visit Our YouTube Channel
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-logo">GOSIP HIGHLIGHT</div>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#latest">Latest Videos</a>
+      <a href="#videos">Celebrity Stories</a>
+      <a href="#photos">Photos</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="https://www.youtube.com/@gosiphighlight-d8" target="_blank" rel="noopener">YouTube</a>
+    </div>
 
     <p>
-      Discover the fascinating lives of Hollywood stars,
-      music legends and the world's most famous personalities.
-      Their success, struggles and stories behind the fame.
+      © <span id="year"></span> Gosip Highlight. All rights reserved.
     </p>
 
-    <div class="hero-buttons">
-
-      <a class="watch-btn"
-         href="https://www.youtube.com/@gosiphighlight-d8"
-         target="_blank"
-         rel="noopener noreferrer">
-         ▶ Watch Now
-      </a>
-
-      <a class="more-btn" href="#videos">
-         More Stories
-      </a>
-
-    </div>
-
-  </div>
-
-</div>
-
-<main>
-
-<!-- FEATURED STORY -->
-
-<div class="featured-banner">
-
-  <div class="hero-label">🔥 FEATURED STORY</div>
-
-  <h2>BEHIND THE FAME</h2>
-
-  <p>
-    Fame tells only part of the story.
-    Discover the journeys, unforgettable moments,
-    achievements and challenges that shaped
-    the world's biggest stars.
-  </p>
-
-  <a class="watch-btn"
-     href="https://www.youtube.com/@gosiphighlight-d8"
-     target="_blank"
-     rel="noopener noreferrer">
-     ▶ Explore Stories
-  </a>
-
-</div>
-
-<!-- CELEBRITY STORIES -->
-
-<!-- REAL YOUTUBE VIDEOS -->
-
-<section class="streaming-section" id="videos">
-
-  <div class="section-heading">
-    <h2>Latest Videos <span style="color:#e50914">›</span></h2>
-    <p>Watch the latest stories from Gosip Highlight.</p>
-  </div>
-
-  <div class="video-row">
-
-    <!-- VIDEO 1 -->
-
-    <a class="video-card"
-       href="https://www.youtube.com/watch?v=v3q4RKjyz4w"
-       target="_blank"
-       rel="noopener noreferrer">
-
-      <img
-        src="https://i.ytimg.com/vi/v3q4RKjyz4w/hqdefault.jpg"
-        alt="The Music Industry Has a Rich Kid Problem">
-
-      <div class="video-info">
-        <span class="video-tag">Music Industry</span>
-        <h3>The Music Industry Has a Rich Kid Problem</h3>
-        <p>Discover the story behind wealth and opportunity in music.</p>
-      </div>
-
-    </a>
-
-    <!-- VIDEO 2 -->
-
-    <a class="video-card"
-       href="https://www.youtube.com/watch?v=t9BIiBM0wvI"
-       target="_blank"
-       rel="noopener noreferrer">
-
-      <img
-        src="https://i.ytimg.com/vi/t9BIiBM0wvI/hqdefault.jpg"
-        alt="How Will Smith Accidentally Destroyed His Own Mask">
-
-      <div class="video-info">
-        <span class="video-tag">Hollywood Story</span>
-        <h3>How Will Smith Accidentally Destroyed His Own Mask</h3>
-        <p>A closer look at a Hollywood star's public image.</p>
-      </div>
-
-    </a>
-
-    <!-- VIDEO 3 -->
-
-    <a class="video-card"
-       href="https://www.youtube.com/watch?v=5a-kA7QCzLg"
-       target="_blank"
-       rel="noopener noreferrer">
-
-      <img
-        src="https://i.ytimg.com/vi/5a-kA7QCzLg/hqdefault.jpg"
-        alt="Why do people believe Michael Jackson is alive?">
-
-      <div class="video-info">
-        <span class="video-tag">Music Legend</span>
-        <h3>Why do people believe Michael Jackson is alive?</h3>
-        <p>Exploring the enduring theories surrounding the King of Pop.</p>
-      </div>
-
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- HOLLYWOOD -->
-
-<section class="streaming-section">
-
-  <div class="section-heading">
-    <h2>Hollywood Highlights <span style="color:#e50914">›</span></h2>
-    <p>The stars, stories and moments everyone talks about.</p>
-  </div>
-
-  <div class="video-row">
-
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/560x315/151525/ffffff?text=Hollywood+News" alt="Hollywood news">
-      <div class="video-info">
-        <span class="video-tag">Entertainment</span>
-        <h3>Hollywood News</h3>
-        <p>What's happening in the entertainment world?</p>
-      </div>
-    </a>
-
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/560x315/35101c/ffffff?text=Famous+Actors" alt="Famous actors">
-      <div class="video-info">
-        <span class="video-tag">Hollywood Stars</span>
-        <h3>Famous Actors</h3>
-        <p>Meet the faces behind iconic movies.</p>
-      </div>
-    </a>
-
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/560x315/25202b/ffffff?text=Celebrity+Lifestyle" alt="Celebrity lifestyle">
-      <div class="video-info">
-        <span class="video-tag">Celebrity Lifestyle</span>
-        <h3>Celebrity Lifestyle</h3>
-        <p>Success, luxury and life beyond the spotlight.</p>
-      </div>
-    </a>
-
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/560x315/202020/ffffff?text=Behind+The+Fame" alt="Behind the fame">
-      <div class="video-info">
-        <span class="video-tag">Original Stories</span>
-        <h3>Behind The Fame</h3>
-        <p>The stories the headlines don't always tell.</p>
-      </div>
-    </a>
-
-  </div>
-
-</section>
-
-<!-- MUSIC LEGENDS -->
-
-<section class="streaming-section">
-
-  <div class="section-heading">
-    <h2>Music Legends 🎵</h2>
-    <p>Celebrating the voices and artists who changed music forever.</p>
-  </div>
-
-  <div class="video-row">
-
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/560x315/35101c/ffffff?text=Music+Legends" alt="Music legends">
-      <div class="video-info">
-        <span class="video-tag">Music History</span>
-        <h3>Music Legends</h3>
-        <p>The greatest artists and their unforgettable journeys.</p>
-      </div>
-    </a>
-
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/560x315/201020/ffffff?text=Iconic+Performances" alt="Iconic performances">
-      <div class="video-info">
-        <span class="video-tag">Iconic Moments</span>
-        <h3>Iconic Performances</h3>
-        <p>Performances that made history.</p>
-      </div>
-    </a>
-
-    <a class="video-card" href="https://www.youtube.com/@gosiphighlight-d8">
-      <img src="https://placehold.co/560x315/25202b/ffffff?text=Music+Stories" alt="Music stories">
-      <div class="video-info">
-        <span class="video-tag">Artist Stories</span>
-        <h3>Music Stories</h3>
-        <p>Discover the people behind the music.</p>
-      </div>
-    </a>
-
-  </div>
-
-</section>
-
-<!-- PHOTO GALLERY -->
-
-<section class="photo-section" id="photos">
-
-  <div class="section-heading">
-    <h2>Photo Gallery 📸</h2>
-    <p>Celebrity moments and entertainment highlights.</p>
-  </div>
-
-  <div class="photo-grid">
-
-    <div class="photo-card">
-      <img src="https://placehold.co/600x350/35101c/ffffff?text=Celebrity+Moments" alt="Celebrity moments">
-      <h3>Celebrity Moments</h3>
-    </div>
-
-    <div class="photo-card">
-      <img src="https://placehold.co/600x350/25202b/ffffff?text=Hollywood+Stars" alt="Hollywood stars">
-      <h3>Hollywood Stars</h3>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact-section" id="contact">
-
-  <div class="section-heading">
-    <h2>Contact Gosip Highlight ✉️</h2>
-  </div>
-
-  <p>Questions, suggestions or collaboration opportunities? Contact us.</p>
-
-  <form class="contact-form"
-        action="mailto:YOUR_EMAIL@example.com"
-        method="post"
-        enctype="text/plain">
-
-    <input type="text" name="Name" placeholder="Your name" required>
-
-    <input type="email" name="Email" placeholder="Your email" required>
-
-    <textarea name="Message" rows="5" placeholder="Your message" required></textarea>
-
-    <button type="submit">Send Message</button>
-
-  </form>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-
-  <h2 style="color:#e50914">GOSIP HIGHLIGHT</h2>
-
-  <p>Celebrity News | Hollywood | Music | Entertainment</p>
-
-  <p>© 2026 Gosip Highlight. All rights reserved.</p>
-
-  <a href="https://www.youtube.com/@gosiphighlight-d8"
-     target="_blank"
-     rel="noopener noreferrer">
-     Visit our YouTube Channel
-  </a>
-
-</footer>
+    <p>
+      Celebrity News • Hollywood • Music • Entertainment
+    </p>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+    // Mobile navigation menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const mainNav = document.getElementById("main-nav");
+
+    menuToggle.addEventListener("click", function () {
+      mainNav.classList.toggle("active");
+
+      if (mainNav.classList.contains("active")) {
+        menuToggle.textContent = "✕";
+      } else {
+        menuToggle.textContent = "☰";
+      }
+    });
+
+    // Close mobile menu after clicking a navigation link
+    document.querySelectorAll("#main-nav a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("active");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Dark navigation background after scrolling
+    window.addEventListener("scroll", function () {
+      const header = document.getElementById("site-header");
+
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+
+    // Automatically update copyright year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
