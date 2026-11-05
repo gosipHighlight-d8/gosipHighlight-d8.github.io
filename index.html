@@ -15,7 +15,42 @@
   margin: 0;
   padding: 0;
 }
+<!-- AUTOMATIC YOUTUBE VIDEOS -->
 
+<section class="youtube-section">
+
+  <div class="section-heading">
+
+    <h2>Latest Videos
+      <span style="color:#e50914">▶</span>
+    </h2>
+
+    <p class="youtube-description">
+      Watch the latest celebrity stories from Gosip Highlight.
+    </p>
+
+  </div>
+
+  <div class="youtube-player">
+
+    <iframe
+      src="https://www.youtube.com/embed/videoseries?list=UULDV38h6II7jhEyik58Cyog"
+      title="Gosip Highlight Latest YouTube Videos"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+  <a class="youtube-subscribe"
+     href="https://www.youtube.com/@gosiphighlight-d8"
+     target="_blank"
+     rel="noopener noreferrer">
+     Subscribe on YouTube
+  </a>
+
+</section>
 html {
   scroll-behavior: smooth;
 }
@@ -424,7 +459,43 @@ footer a {
     font-size: 21px;
   }
 }
+/* AUTOMATIC YOUTUBE VIDEOS */
 
+.youtube-section {
+  padding: 45px 5%;
+  background: #080808;
+}
+
+.youtube-player {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #181818;
+}
+
+.youtube-player iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.youtube-description {
+  color: #aaa;
+  margin: 12px 0 22px;
+  line-height: 1.6;
+}
+
+.youtube-subscribe {
+  display: inline-block;
+  background: #e50914;
+  color: white;
+  padding: 13px 22px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 20px;
+}
 </style>
 </head>
 
