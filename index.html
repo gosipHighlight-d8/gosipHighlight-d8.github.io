@@ -2,1330 +2,1027 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gosip Highlight | Celebrity Entertainment</title>
-
-<meta name="description" content="Watch celebrity stories, Hollywood news, music legends and entertainment documentaries on Gosip Highlight.">
-
-<style>
-:root {
-    --red: #e50914;
-    --dark: #080808;
-    --panel: #181818;
-    --white: #ffffff;
-    --muted: #b3b3b3;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: var(--dark);
-    color: var(--white);
-    font-family: Arial, Helvetica, sans-serif;
-    overflow-x: hidden;
-}
-
-button, input {
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* NAVIGATION */
-
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 72px;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    z-index: 1000;
-    background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,.95),
-        rgba(0,0,0,.65),
-        transparent
-    );
-    transition: background .3s;
-}
-
-.navbar.scrolled {
-    background: #080808;
-}
-
-.logo {
-    color: var(--red);
-    font-size: 27px;
-    font-weight: 900;
-    letter-spacing: -1.5px;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.logo span {
-    color: white;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    list-style: none;
-}
-
-.nav-links a {
-    color: #ddd;
-    text-decoration: none;
-    font-size: 13px;
-    transition: .2s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: white;
-    font-weight: bold;
-}
-
-.nav-actions {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    border: 1px solid transparent;
-    background: transparent;
-    transition: .3s;
-}
-
-.search-box.open {
-    border-color: white;
-    background: rgba(0,0,0,.8);
-}
-
-.search-box input {
-    width: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    color: white;
-    background: transparent;
-    transition: .3s;
-}
-
-.search-box.open input {
-    width: 180px;
-    padding: 9px;
-}
-
-.search-btn,
-.menu-btn {
-    background: transparent;
-    color: white;
-    border: 0;
-    font-size: 23px;
-    padding: 5px;
-}
-
-.profile {
-    width: 32px;
-    height: 32px;
-    background: var(--red);
-    border-radius: 5px;
-    display: grid;
-    place-items: center;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-.menu-btn {
-    display: none;
-}
-
-/* HERO */
-
-.hero {
-    position: relative;
-    min-height: 690px;
-    height: 90vh;
-    max-height: 850px;
-    display: flex;
-    align-items: center;
-    padding: 100px 5% 80px;
-    background:
-        linear-gradient(to right,
-            rgba(0,0,0,.98) 0%,
-            rgba(0,0,0,.78) 36%,
-            rgba(0,0,0,.2) 75%,
-            rgba(0,0,0,.3) 100%),
-        linear-gradient(to top,
-            #080808 0%,
-            transparent 35%),
-        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=90")
-        center/cover no-repeat;
-}
-
-.hero-content {
-    max-width: 570px;
-    position: relative;
-    z-index: 2;
-    margin-top: 30px;
-}
-
-.hero-label {
-    color: var(--red);
-    font-weight: 900;
-    font-size: 15px;
-    letter-spacing: 5px;
-    margin-bottom: 18px;
-}
-
-.hero h1 {
-    font-size: clamp(45px, 7vw, 82px);
-    line-height: .98;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -3px;
-    margin-bottom: 22px;
-}
-
-.hero-meta {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-    margin-bottom: 20px;
-    font-size: 14px;
-    color: #ddd;
-}
-
-.match {
-    color: #46d369;
-    font-weight: bold;
-}
-
-.age {
-    border: 1px solid #aaa;
-    padding: 3px 7px;
-}
-
-.hero-description {
-    color: #e0e0e0;
-    font-size: 16px;
-    line-height: 1.65;
-    margin-bottom: 28px;
-    max-width: 520px;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.play-btn,
-.info-btn {
-    padding: 13px 25px;
-    border: 0;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    transition: .2s;
-}
-
-.play-btn {
-    color: black;
-    background: white;
-}
-
-.info-btn {
-    color: white;
-    background: rgba(109,109,110,.7);
-}
-
-.play-btn:hover {
-    background: #ddd;
-}
-
-.info-btn:hover {
-    background: rgba(109,109,110,.4);
-}
-
-/* MAIN CONTENT */
-
-main {
-    position: relative;
-    z-index: 3;
-    margin-top: -65px;
-    padding-bottom: 50px;
-}
-
-.video-section {
-    padding: 20px 5% 35px;
-    position: relative;
-}
-
-.section-heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 17px;
-}
-
-.section-heading h2 {
-    font-size: 22px;
-    font-weight: 800;
-}
-
-.section-heading a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 13px;
-}
-
-.section-heading a:hover {
-    color: white;
-}
-
-.video-row {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 12px 3px 28px;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-}
-
-.video-row::-webkit-scrollbar {
-    display: none;
-}
-
-.video-card {
-    position: relative;
-    flex: 0 0 240px;
-    height: 140px;
-    border-radius: 5px;
-    overflow: hidden;
-    background: #222;
-    cursor: pointer;
-    transition: transform .3s, box-shadow .3s;
-}
-
-.video-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .4s;
-}
-
-.video-card:hover {
-    transform: scale(1.09);
-    z-index: 10;
-    box-shadow: 0 8px 25px rgba(0,0,0,.7);
-}
-
-.video-card:hover img {
-    transform: scale(1.08);
-}
-
-.card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,.95),
-        transparent 70%
-    );
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 12px;
-    opacity: 0;
-    transition: opacity .3s;
-}
-
-.video-card:hover .card-overlay {
-    opacity: 1;
-}
-
-.card-overlay h3 {
-    font-size: 13px;
-    margin-bottom: 8px;
-}
-
-.card-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.card-buttons button {
-    width: 29px;
-    height: 29px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    background: rgba(20,20,20,.8);
-    color: white;
-    font-size: 13px;
-}
-
-.card-buttons button:hover {
-    background: white;
-    color: black;
-}
-
-.card-tag {
-    position: absolute;
-    top: 9px;
-    left: 9px;
-    background: var(--red);
-    padding: 4px 7px;
-    font-size: 9px;
-    font-weight: bold;
-    border-radius: 2px;
-}
-
-/* FEATURED STORY */
-
-.featured {
-    margin: 30px 5% 55px;
-    min-height: 350px;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding: 45px;
-    background:
-        linear-gradient(to right,
-            rgba(0,0,0,.96),
-            rgba(0,0,0,.6),
-            rgba(0,0,0,.05)),
-        url("https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-}
-
-.featured-content {
-    max-width: 510px;
-}
-
-.featured-content .hero-label {
-    font-size: 12px;
-}
-
-.featured-content h2 {
-    font-size: clamp(32px, 5vw, 52px);
-    margin-bottom: 16px;
-}
-
-.featured-content p {
-    line-height: 1.6;
-    color: #ddd;
-    margin-bottom: 22px;
-}
-
-/* VIDEO PLAYER */
-
-.modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 2000;
-    background: rgba(0,0,0,.94);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.modal.show {
-    display: flex;
-}
-
-.modal-content {
-    width: min(950px, 100%);
-    background: #181818;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-}
-
-.modal-close {
-    position: absolute;
-    right: 12px;
-    top: 12px;
-    z-index: 5;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
-    background: #111;
-    color: white;
-    font-size: 23px;
-}
-
-.player-frame {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: black;
-}
-
-.player-frame iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.modal-details {
-    padding: 20px 25px 25px;
-}
-
-.modal-details h2 {
-    margin-bottom: 12px;
-}
-
-.modal-details p {
-    color: #ccc;
-    line-height: 1.6;
-}
-
-/* SEARCH RESULTS */
-
-.search-results {
-    display: none;
-    padding: 110px 5% 50px;
-    min-height: 70vh;
-}
-
-.search-results h2 {
-    margin-bottom: 25px;
-}
-
-.search-results .video-row {
-    flex-wrap: wrap;
-}
-
-.no-results {
-    color: #aaa;
-}
-
-/* ABOUT */
-
-.about {
-    padding: 55px 5%;
-    background: #101010;
-    border-top: 1px solid #292929;
-}
-
-.about h2 {
-    font-size: 26px;
-    margin-bottom: 15px;
-}
-
-.about p {
-    color: #aaa;
-    line-height: 1.8;
-    max-width: 700px;
-}
-
-/* FOOTER */
-
-footer {
-    padding: 45px 5% 25px;
-    color: #888;
-    background: #080808;
-}
-
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-bottom: 30px;
-}
-
-.social-links a {
-    color: #aaa;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.social-links a:hover {
-    color: white;
-}
-
-footer p {
-    font-size: 12px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width: 900px) {
-    .navbar {
-        gap: 18px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gosip Highlight brings you the latest celebrity news, Hollywood stories, music, sports and pop culture.">
+  <meta name="theme-color" content="#111111">
+  <title>Gosip Highlight | Celebrity News & Entertainment</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --red: #e5283b;
+      --dark: #111111;
+      --muted: #777777;
+      --paper: #f7f6f3;
+      --white: #ffffff;
+      --border: #e9e7e3;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
     }
 
-    .nav-links {
-        gap: 13px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--dark);
+      font-family: var(--sans);
+      line-height: 1.6;
     }
 
-    .nav-links a {
-        font-size: 12px;
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    img { display: block; width: 100%; object-fit: cover; }
+
+    .topline {
+      background: var(--dark);
+      color: white;
+      padding: 9px 5%;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
 
-    .video-card {
-        flex-basis: 210px;
-        height: 125px;
+    .topline span:last-child { color: #bbbbbb; }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
     }
 
-    .hero {
-        min-height: 620px;
-    }
-}
-
-@media(max-width: 650px) {
-    .navbar {
-        height: 62px;
-        padding: 0 4%;
-    }
-
-    .logo {
-        font-size: 22px;
+    .header-inner {
+      max-width: 1380px;
+      margin: auto;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
     }
 
-    .menu-btn {
-        display: block;
+    .brand {
+      font-weight: 800;
+      font-size: 27px;
+      letter-spacing: -1.8px;
+      white-space: nowrap;
     }
 
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 62px;
-        left: 0;
-        width: 100%;
-        padding: 20px 5%;
-        background: #111;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
+    .brand span { color: var(--red); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
     }
 
-    .nav-links.show {
-        display: flex;
+    nav a {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: color .2s;
     }
 
-    .nav-actions {
-        gap: 10px;
+    nav a:hover { color: var(--red); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .search-box.open input {
-        width: 105px;
+    .search-button, .menu-button {
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 50px;
+      padding: 10px 14px;
+      font-size: 12px;
     }
 
-    .profile {
-        width: 28px;
-        height: 28px;
+    .menu-button { display: none; }
+
+    .container {
+      max-width: 1380px;
+      margin: auto;
+      padding: 0 5%;
     }
 
-    .hero {
-        min-height: 610px;
-        height: 82vh;
-        padding: 100px 5% 70px;
-        background-position: 60% center;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-    }
-
-    .hero-description {
-        font-size: 14px;
-    }
-
-    main {
-        margin-top: -40px;
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 15px;
+      margin-bottom: 23px;
     }
 
     .section-heading h2 {
-        font-size: 19px;
+      font: 700 30px var(--serif);
+      letter-spacing: -.6px;
     }
 
-    .video-card {
-        flex-basis: 175px;
-        height: 105px;
+    .section-heading p {
+      color: var(--muted);
+      font-size: 12px;
     }
 
-    .featured {
-        padding: 30px 22px;
-        min-height: 330px;
-        margin-left: 4%;
-        margin-right: 4%;
+    .section-heading a {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--red);
     }
 
-    .featured-content h2 {
-        font-size: 34px;
+    .hero {
+      padding-top: 35px;
+      padding-bottom: 55px;
     }
-}
 
-@media(prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr;
+      gap: 18px;
     }
-}
-</style>
+
+    .hero-main, .hero-side-card {
+      position: relative;
+      overflow: hidden;
+      background: #222;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero-main { min-height: 490px; }
+
+    .hero-main img {
+      height: 100%;
+      min-height: 490px;
+      position: absolute;
+      inset: 0;
+      opacity: .8;
+      transition: transform .5s;
+    }
+
+    .hero-main:hover img, .hero-side-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.88), transparent 75%);
+    }
+
+    .hero-content {
+      position: absolute;
+      bottom: 35px;
+      left: 35px;
+      right: 35px;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--red);
+      color: white;
+      padding: 5px 10px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-content h1 {
+      font: 700 clamp(30px, 4vw, 48px)/1.12 var(--serif);
+      max-width: 760px;
+      margin-bottom: 14px;
+    }
+
+    .hero-content p {
+      color: #dddddd;
+      font-size: 13px;
+      max-width: 570px;
+    }
+
+    .hero-side {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .hero-side-card { min-height: 235px; }
+
+    .hero-side-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      transition: transform .5s;
+    }
+
+    .hero-side-card .hero-content {
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+
+    .hero-side-card h2 {
+      font: 700 23px/1.2 var(--serif);
+    }
+
+    .hero-side-card .eyebrow { margin-bottom: 8px; }
+
+    .breaking {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+
+    .breaking-inner {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      white-space: nowrap;
+    }
+
+    .breaking-label {
+      background: var(--red);
+      color: white;
+      padding: 6px 11px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .breaking-text {
+      font-size: 12px;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .content-section { padding: 55px 0; }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px 22px;
+    }
+
+    .story-card { cursor: pointer; }
+
+    .story-image {
+      position: relative;
+      overflow: hidden;
+      background: #e5e5e5;
+      aspect-ratio: 16 / 10;
+      margin-bottom: 15px;
+    }
+
+    .story-image img {
+      height: 100%;
+      transition: transform .4s;
+    }
+
+    .story-card:hover .story-image img { transform: scale(1.05); }
+
+    .category-tag {
+      display: inline-block;
+      color: var(--red);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .story-card h3 {
+      font: 700 22px/1.25 var(--serif);
+      margin-bottom: 9px;
+    }
+
+    .story-card p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .story-meta {
+      color: #999;
+      font-size: 10px;
+      margin-top: 12px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .trending-section {
+      background: #171717;
+      color: white;
+      padding: 55px 0;
+    }
+
+    .trending-section .section-heading p { color: #aaaaaa; }
+
+    .trending-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .trending-card {
+      display: flex;
+      gap: 12px;
+      align-items: start;
+      cursor: pointer;
+    }
+
+    .trending-card img {
+      width: 95px;
+      height: 90px;
+      flex-shrink: 0;
+    }
+
+    .trending-number {
+      color: var(--red);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .trending-card h3 {
+      font: 700 16px/1.3 var(--serif);
+    }
+
+    .category-section { padding: 55px 0; }
+
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .filter-button {
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: white;
+      padding: 9px 17px;
+      font-size: 11px;
+      font-weight: 700;
+      transition: all .2s;
+    }
+
+    .filter-button.active, .filter-button:hover {
+      background: var(--dark);
+      color: white;
+      border-color: var(--dark);
+    }
+
+    .youtube-section {
+      background: #f0eeea;
+      padding: 55px 0;
+    }
+
+    .youtube-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+      background: white;
+      padding: 35px;
+      border: 1px solid var(--border);
+    }
+
+    .youtube-box h2 {
+      font: 700 29px var(--serif);
+      margin-bottom: 8px;
+    }
+
+    .youtube-box p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .youtube-link {
+      background: var(--red);
+      color: white;
+      padding: 13px 22px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .newsletter {
+      padding: 65px 5%;
+      text-align: center;
+      background: #fff;
+    }
+
+    .newsletter h2 {
+      font: 700 34px var(--serif);
+      margin-bottom: 10px;
+    }
+
+    .newsletter p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .newsletter form {
+      max-width: 470px;
+      margin: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .newsletter input {
+      flex: 1;
+      min-width: 0;
+      padding: 13px;
+      border: 1px solid var(--border);
+      outline: none;
+    }
+
+    .newsletter button {
+      border: 0;
+      background: var(--dark);
+      color: white;
+      padding: 0 20px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 45px 5% 20px;
+    }
+
+    .footer-inner {
+      max-width: 1380px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-about { max-width: 380px; }
+
+    .footer-about p {
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      font-size: 11px;
+    }
+
+    .copyright {
+      max-width: 1380px;
+      margin: 35px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 10px;
+    }
+
+    .search-panel {
+      display: none;
+      background: white;
+      padding: 15px 5%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .search-panel.show { display: block; }
+
+    .search-panel input {
+      width: 100%;
+      max-width: 1380px;
+      display: block;
+      margin: auto;
+      padding: 13px;
+      border: 1px solid var(--border);
+      font: inherit;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(0,0,0,.8);
+      padding: 25px;
+      overflow-y: auto;
+    }
+
+    .modal.show { display: flex; justify-content: center; align-items: start; }
+
+    .modal-content {
+      position: relative;
+      background: white;
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      padding: 35px;
+      border-radius: 4px;
+    }
+
+    .modal-content img {
+      max-height: 390px;
+      margin-bottom: 20px;
+    }
+
+    .modal-content h2 {
+      font: 700 34px/1.2 var(--serif);
+      margin-bottom: 12px;
+    }
+
+    .modal-content p {
+      color: #555;
+      font-size: 14px;
+      line-height: 1.9;
+      margin-top: 15px;
+    }
+
+    .close-modal {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      border: 0;
+      background: white;
+      font-size: 25px;
+    }
+
+    .empty-message {
+      padding: 35px;
+      text-align: center;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    @media(max-width: 950px) {
+      nav { gap: 12px; }
+      nav a { font-size: 10px; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-side { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .hero-side-card { min-height: 220px; }
+      .trending-list { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media(max-width: 680px) {
+      .topline { font-size: 9px; }
+      .header-inner { padding: 15px 5%; flex-wrap: wrap; }
+      .brand { font-size: 23px; }
+      .menu-button { display: block; }
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: start;
+        padding: 15px 0;
+        border-top: 1px solid var(--border);
+      }
+      nav.open { display: flex; }
+      nav a { font-size: 12px; }
+      .search-button { padding: 9px 11px; }
+      .hero { padding-top: 20px; }
+      .hero-main, .hero-main img { min-height: 390px; }
+      .hero-content { left: 20px; right: 20px; bottom: 22px; }
+      .hero-content h1 { font-size: 31px; }
+      .hero-side { grid-template-columns: 1fr; }
+      .hero-side-card { min-height: 210px; }
+      .story-grid { grid-template-columns: repeat(2, 1fr); gap: 22px 13px; }
+      .story-card h3 { font-size: 17px; }
+      .story-card p { font-size: 11px; }
+      .section-heading h2 { font-size: 25px; }
+      .trending-list { grid-template-columns: 1fr; }
+      .youtube-box { flex-direction: column; align-items: start; padding: 25px; }
+      .newsletter h2 { font-size: 27px; }
+      .modal-content { padding: 25px 18px; }
+      .modal-content h2 { font-size: 26px; }
+    }
+
+    @media(max-width: 390px) {
+      .story-grid { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 27px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+  <div class="topline">
+    <span>Gosip Highlight — The Entertainment Edit</span>
+    <span>Celebrity • Culture • Entertainment</span>
+  </div>
 
-<header class="navbar" id="navbar">
+  <header>
+    <div class="header-inner">
+      <a href="#" class="brand">GOSIP<span>HIGHLIGHT</span></a>
 
-    <a href="#home" class="logo">GOSIP<span> HIGHLIGHT</span></a>
+      <nav id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#latest">Latest News</a>
+        <a href="#trending">Trending</a>
+        <a href="#categories">Categories</a>
+        <a href="#videos">Videos</a>
+        <a href="#about">About</a>
+      </nav>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
-
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#celebrity">Celebrity Stories</a></li>
-        <li><a href="#hollywood">Hollywood</a></li>
-        <li><a href="#music">Music Legends</a></li>
-        <li><a href="#latest">Latest Videos</a></li>
-        <li><a href="#mylist">My List</a></li>
-    </ul>
-
-    <div class="nav-actions">
-
-        <div class="search-box" id="searchBox">
-            <input type="search" id="searchInput"
-                   placeholder="Search videos..."
-                   aria-label="Search videos">
-            <button class="search-btn" id="searchBtn"
-                    aria-label="Search">⌕</button>
-        </div>
-
-        <div class="profile">G</div>
+      <div class="header-actions">
+        <button class="search-button" id="searchToggle">⌕ Search</button>
+        <button class="menu-button" id="menuToggle">☰</button>
+      </div>
     </div>
-</header>
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="hero-label">GOSIP HIGHLIGHT ORIGINAL</div>
-
-        <h1>THE WORLD<br>OF FAME</h1>
-
-        <div class="hero-meta">
-            <span class="match">98% Match</span>
-            <span>2026</span>
-            <span class="age">13+</span>
-            <span>Entertainment Documentary</span>
-        </div>
-
-        <p class="hero-description">
-            Discover the extraordinary lives behind the headlines.
-            From Hollywood legends to music superstars, explore
-            the stories, success, struggles and moments that
-            shaped entertainment history.
-        </p>
-
-        <div class="hero-buttons">
-            <button class="play-btn"
-                    onclick="openPlayer('videoseries','The World of Fame')">
-                ▶ Play
-            </button>
-
-            <button class="info-btn" onclick="showInfo()">
-                ⓘ More Info
-            </button>
-        </div>
-
+    <div class="search-panel" id="searchPanel">
+      <input type="search" id="searchInput" placeholder="Search celebrity news, music, sports...">
     </div>
-</section>
+  </header>
 
-<main id="mainContent">
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-grid">
 
-    <!-- LATEST VIDEOS -->
+        <article class="hero-main" data-story="featured">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1400&q=85" alt="Editorial portrait">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="eyebrow">Featured Story</span>
+            <h1>The Stories Behind the Stars: Celebrity Culture That Captures the World</h1>
+            <p>Discover the people, moments and stories shaping entertainment and pop culture.</p>
+          </div>
+        </article>
 
-    <section class="video-section" id="latest">
-        <div class="section-heading">
-            <h2>🔥 Latest Videos</h2>
-            <a href="https://www.youtube.com/@gosiphighlight-d8"
-               target="_blank">Explore All →</a>
+        <div class="hero-side">
+          <article class="hero-side-card" data-story="hollywood">
+            <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=900&q=85" alt="Fashion portrait">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="eyebrow">Hollywood</span>
+              <h2>Inside the World of Hollywood</h2>
+            </div>
+          </article>
+
+          <article class="hero-side-card" data-story="music">
+            <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=85" alt="Live music performance">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="eyebrow">Music & Culture</span>
+              <h2>The Music Moments Everyone Remembers</h2>
+            </div>
+          </article>
         </div>
 
-        <div class="video-row" id="latestRow">
-
-            <article class="video-card"
-                data-title="Music Industry Rich Kid Problem"
-                data-video="v3q4RKjyz4w">
-                <img src="https://img.youtube.com/vi/v3q4RKjyz4w/hqdefault.jpg"
-                     alt="Music Industry Rich Kid Problem">
-                <span class="card-tag">NEW</span>
-                <div class="card-overlay">
-                    <h3>Music Industry Rich Kid Problem</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)" title="Play">▶</button>
-                        <button onclick="saveCard(event,this)" title="Add to list">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="Will Smith Mask"
-                data-video="t9BIiBM0wvI">
-                <img src="https://img.youtube.com/vi/t9BIiBM0wvI/hqdefault.jpg"
-                     alt="Will Smith Mask">
-                <div class="card-overlay">
-                    <h3>Will Smith Mask</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="Michael Jackson Alive"
-                data-video="5a-kA7QCzLg">
-                <img src="https://img.youtube.com/vi/5a-kA7QCzLg/hqdefault.jpg"
-                     alt="Michael Jackson video">
-                <div class="card-overlay">
-                    <h3>Michael Jackson Alive</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
+      </div>
     </section>
 
-    <!-- CELEBRITY STORIES -->
-
-    <section class="video-section" id="celebrity">
-        <div class="section-heading">
-            <h2>Celebrity Stories</h2>
-            <a href="#latest">Explore →</a>
-        </div>
-
-        <div class="video-row">
-
-            <article class="video-card"
-                data-title="Hollywood Celebrity Stories"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
-                     alt="Celebrity portrait">
-                <span class="card-tag">FEATURED</span>
-                <div class="card-overlay">
-                    <h3>Celebrity Stories</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="Behind the Fame"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80"
-                     alt="Portrait">
-                <div class="card-overlay">
-                    <h3>Behind the Fame</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="The Price of Fame"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80"
-                     alt="Celebrity portrait">
-                <div class="card-overlay">
-                    <h3>The Price of Fame</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- HOLLYWOOD -->
-
-    <section class="video-section" id="hollywood">
-        <div class="section-heading">
-            <h2>🎬 Hollywood Highlights</h2>
-            <a href="#latest">Explore →</a>
-        </div>
-
-        <div class="video-row">
-
-            <article class="video-card"
-                data-title="Hollywood Behind the Scenes"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80"
-                     alt="Cinema">
-                <div class="card-overlay">
-                    <h3>Hollywood Behind the Scenes</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="The World of Movie Stars"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=700&q=80"
-                     alt="Movie theater">
-                <div class="card-overlay">
-                    <h3>The World of Movie Stars</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="Fame and Fortune"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=700&q=80"
-                     alt="Cinema performance">
-                <div class="card-overlay">
-                    <h3>Fame and Fortune</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- FEATURED STORY -->
-
-    <section class="featured">
-        <div class="featured-content">
-            <div class="hero-label">THE STORY BEHIND THE LEGEND</div>
-            <h2>THE VOICE THAT CAPTIVATED THE WORLD</h2>
-            <p>
-                Explore the remarkable journey of music's greatest
-                voices, their unforgettable performances and the
-                legacy they left behind.
-            </p>
-            <button class="play-btn"
-                onclick="openPlayer('videoseries','Music Legends')">
-                ▶ Watch Stories
-            </button>
-        </div>
-    </section>
-
-    <!-- MUSIC LEGENDS -->
-
-    <section class="video-section" id="music">
-        <div class="section-heading">
-            <h2>🎵 Music Legends</h2>
-            <a href="#latest">Explore →</a>
-        </div>
-
-        <div class="video-row">
-
-            <article class="video-card"
-                data-title="Music Legends"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=700&q=80"
-                     alt="Singer performing">
-                <div class="card-overlay">
-                    <h3>Music Legends</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="The Greatest Voices"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=700&q=80"
-                     alt="Live music">
-                <div class="card-overlay">
-                    <h3>The Greatest Voices</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-            <article class="video-card"
-                data-title="The History of Music"
-                data-video="videoseries">
-                <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=700&q=80"
-                     alt="Music studio">
-                <div class="card-overlay">
-                    <h3>The History of Music</h3>
-                    <div class="card-buttons">
-                        <button onclick="playCard(event,this)">▶</button>
-                        <button onclick="saveCard(event,this)">＋</button>
-                    </div>
-                </div>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- MY LIST -->
-
-    <section class="video-section" id="mylist">
-        <div class="section-heading">
-            <h2>＋ My List</h2>
-            <span style="color:#aaa;font-size:13px">
-                Your saved videos
-            </span>
-        </div>
-
-        <div class="video-row" id="savedRow">
-            <p style="color:#aaa">Your saved videos will appear here.</p>
-        </div>
-    </section>
-
-</main>
-
-<!-- SEARCH RESULTS -->
-
-<section class="search-results" id="searchResults">
-    <h2>Search Results</h2>
-    <div class="video-row" id="resultsRow"></div>
-</section>
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-    <h2>About Gosip Highlight</h2>
-    <p>
-        Welcome to Gosip Highlight, your destination for celebrity
-        stories, Hollywood entertainment, music legends and
-        fascinating documentaries. We explore the people,
-        performances and moments that shape popular culture.
-        Subscribe to our YouTube channel for more entertainment
-        stories and exclusive highlights.
-    </p>
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-    <div class="social-links">
-        <a href="https://www.youtube.com/@gosiphighlight-d8"
-           target="_blank">YouTube</a>
-        <a href="#about">About Us</a>
-        <a href="#latest">Latest Videos</a>
-        <a href="#home">Back to Top ↑</a>
+    <div class="breaking">
+      <div class="container breaking-inner">
+        <span class="breaking-label">THE LATEST</span>
+        <span class="breaking-text">Your destination for celebrity news, Hollywood, music, sports and entertainment culture.</span>
+      </div>
     </div>
 
-    <p>© <span id="year"></span> Gosip Highlight. All Rights Reserved.</p>
-</footer>
+    <section class="content-section container" id="latest">
+      <div class="section-heading">
+        <div>
+          <h2>Latest Stories</h2>
+          <p>Fresh stories from the world of entertainment</p>
+        </div>
+        <a href="#categories">Explore stories →</a>
+      </div>
+      <div class="story-grid" id="latestGrid"></div>
+    </section>
 
-<!-- VIDEO PLAYER MODAL -->
+    <section class="trending-section" id="trending">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2>Trending Highlights</h2>
+            <p>The stories readers are exploring</p>
+          </div>
+        </div>
+        <div class="trending-list" id="trendingList"></div>
+      </div>
+    </section>
 
-<div class="modal" id="videoModal" onclick="closeOutside(event)">
+    <section class="category-section container" id="categories">
+      <div class="section-heading">
+        <div>
+          <h2>Explore Entertainment</h2>
+          <p>Find the stories that interest you</p>
+        </div>
+      </div>
+
+      <div class="category-filters" id="categoryFilters">
+        <button class="filter-button active" data-category="All">All Stories</button>
+        <button class="filter-button" data-category="Hollywood">Hollywood</button>
+        <button class="filter-button" data-category="Music">Music</button>
+        <button class="filter-button" data-category="WNBA & Sports">WNBA & Sports</button>
+        <button class="filter-button" data-category="Lifestyle">Lifestyle</button>
+      </div>
+
+      <div class="story-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="youtube-section" id="videos">
+      <div class="container">
+        <div class="youtube-box">
+          <div>
+            <span class="category-tag">WATCH GOSIP HIGHLIGHT</span>
+            <h2>Celebrity Stories. Beyond the Headlines.</h2>
+            <p>Watch our latest entertainment features, biographies and celebrity stories on YouTube.</p>
+          </div>
+          <a class="youtube-link" href="https://youtube.com/@gosiphighlight-d8" target="_blank" rel="noopener">VISIT OUR YOUTUBE CHANNEL ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Stay in the Highlight</h2>
+      <p>Keep up with celebrity culture, entertainment and the stories making headlines.</p>
+      <form id="newsletterForm">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">COMING SOON</button>
+      </form>
+      <p id="newsletterMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer id="about">
+    <div class="footer-inner">
+      <div class="footer-about">
+        <a href="#" class="brand">GOSIP<span>HIGHLIGHT</span></a>
+        <p>Your destination for celebrity news, Hollywood, music, sports, biographies and entertainment culture.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#latest">Latest News</a>
+        <a href="#categories">Categories</a>
+        <a href="#videos">Videos</a>
+        <a href="https://youtube.com/@gosiphighlight-d8" target="_blank" rel="noopener">YouTube</a>
+        <a href="mailto:contact@gosiphighlight.com">Contact</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> Gosip Highlight. All rights reserved.
+    </div>
+  </footer>
+
+  <div class="modal" id="storyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal-content">
-
-        <button class="modal-close" onclick="closePlayer()">×</button>
-
-        <div class="player-frame">
-            <iframe id="youtubePlayer"
-                src=""
-                title="Gosip Highlight video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
-        </div>
-
-        <div class="modal-details">
-            <h2 id="modalTitle">Gosip Highlight</h2>
-            <p>
-                Watch more celebrity stories, Hollywood news and
-                entertainment documentaries on Gosip Highlight.
-            </p>
-        </div>
-
+      <button class="close-modal" id="closeModal" aria-label="Close">×</button>
+      <img id="modalImage" src="" alt="">
+      <span class="category-tag" id="modalCategory"></span>
+      <h2 id="modalTitle"></h2>
+      <div class="story-meta" id="modalMeta"></div>
+      <p id="modalDescription"></p>
+      <p><strong>Gosip Highlight</strong> — More stories and features are coming soon. Check back for updates.</p>
     </div>
-</div>
+  </div>
 
-<script>
+  <script>
+    // Replace these sample stories with your own verified articles.
+    const stories = [
+      {
+        id: "featured",
+        category: "Hollywood",
+        title: "The Stories Behind the Stars: Celebrity Culture That Captures the World",
+        description: "Explore how entertainment personalities, memorable performances and cultural moments shape the stories people talk about around the world.",
+        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85",
+        date: "Featured",
+        trending: true
+      },
+      {
+        id: "hollywood",
+        category: "Hollywood",
+        title: "Inside the World of Hollywood",
+        description: "A closer look at the entertainment industry, the people who shape it and the stories behind the screen.",
+        image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=1000&q=85",
+        date: "Hollywood",
+        trending: true
+      },
+      {
+        id: "music",
+        category: "Music",
+        title: "The Music Moments Everyone Remembers",
+        description: "From unforgettable performances to influential artists, explore the moments that have helped define music culture.",
+        image: "https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=85",
+        date: "Music",
+        trending: true
+      },
+      {
+        id: "wnba",
+        category: "WNBA & Sports",
+        title: "The Growing Spotlight on Women's Basketball",
+        description: "Meet the athletes, teams and defining moments attracting new attention to women's basketball.",
+        image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1000&q=85",
+        date: "Sports",
+        trending: true
+      },
+      {
+        id: "fashion",
+        category: "Lifestyle",
+        title: "Celebrity Style and the Power of Personal Fashion",
+        description: "Explore the influence of celebrity fashion, red-carpet looks and personal style on popular culture.",
+        image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1000&q=85",
+        date: "Lifestyle",
+        trending: false
+      },
+      {
+        id: "performance",
+        category: "Music",
+        title: "Why Live Performances Create Lasting Memories",
+        description: "The energy, artistry and spectacle behind some of entertainment's most memorable live experiences.",
+        image: "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1000&q=85",
+        date: "Music",
+        trending: false
+      },
+      {
+        id: "cinema",
+        category: "Hollywood",
+        title: "The Art of Storytelling on the Big Screen",
+        description: "A look at the creative work, performances and storytelling that bring memorable films to life.",
+        image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85",
+        date: "Hollywood",
+        trending: false
+      },
+      {
+        id: "basketball",
+        category: "WNBA & Sports",
+        title: "The Athletes Changing the Conversation in Sports",
+        description: "Discover the dedication, competition and influence of today's standout sports personalities.",
+        image: "https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=1000&q=85",
+        date: "Sports",
+        trending: false
+      },
+      {
+        id: "culture",
+        category: "Lifestyle",
+        title: "How Celebrity Culture Influences Everyday Life",
+        description: "From fashion and entertainment to social media, celebrity culture continues to influence conversations around the world.",
+        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85",
+        date: "Culture",
+        trending: false
+      }
+    ];
 
-/* NAVBAR SCROLL */
+    const latestGrid = document.getElementById("latestGrid");
+    const categoryGrid = document.getElementById("categoryGrid");
+    const trendingList = document.getElementById("trendingList");
+    const modal = document.getElementById("storyModal");
 
-const navbar = document.getElementById("navbar");
-
-window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-/* MOBILE MENU */
-
-document.getElementById("menuBtn").addEventListener("click", () => {
-    document.getElementById("navLinks").classList.toggle("show");
-});
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        document.getElementById("navLinks").classList.remove("show");
-    });
-});
-
-/* VIDEO PLAYER */
-
-function openPlayer(videoId, title) {
-
-    const player = document.getElementById("youtubePlayer");
-
-    let videoUrl;
-
-    if (videoId === "videoseries") {
-        videoUrl =
-            "https://www.youtube-nocookie.com/embed/videoseries?list=UULDV38h6II7jhEyik58Cyog&autoplay=1";
-    } else {
-        videoUrl =
-            "https://www.youtube-nocookie.com/embed/" +
-            encodeURIComponent(videoId) + "?autoplay=1&rel=0";
+    function createStoryCard(story) {
+      return `
+        <article class="story-card" data-story="${story.id}">
+          <div class="story-image">
+            <img src="${story.image}" alt="${story.title}" loading="lazy">
+          </div>
+          <span class="category-tag">${story.category}</span>
+          <h3>${story.title}</h3>
+          <p>${story.description}</p>
+          <div class="story-meta">${story.date} · Gosip Highlight</div>
+        </article>
+      `;
     }
 
-    player.src = videoUrl;
-
-    document.getElementById("modalTitle").textContent = title;
-    document.getElementById("videoModal").classList.add("show");
-    document.body.style.overflow = "hidden";
-}
-
-function closePlayer() {
-    document.getElementById("youtubePlayer").src = "";
-    document.getElementById("videoModal").classList.remove("show");
-    document.body.style.overflow = "";
-}
-
-function closeOutside(event) {
-    if (event.target.id === "videoModal") {
-        closePlayer();
+    function renderLatest() {
+      latestGrid.innerHTML = stories.slice(0, 6).map(createStoryCard).join("");
     }
-}
 
-document.addEventListener("keydown", event => {
-    if (event.key === "Escape") closePlayer();
-});
+    function renderCategory(category = "All", search = "") {
+      let filtered = stories;
 
-/* CARD PLAY BUTTON */
+      if (category !== "All") {
+        filtered = filtered.filter(story => story.category === category);
+      }
 
-function playCard(event, button) {
-    event.stopPropagation();
-
-    const card = button.closest(".video-card");
-
-    openPlayer(
-        card.dataset.video,
-        card.dataset.title
-    );
-}
-
-/* CLICK CARD */
-
-document.querySelectorAll(".video-card").forEach(card => {
-    card.addEventListener("click", event => {
-
-        if (event.target.closest("button")) return;
-
-        openPlayer(
-            card.dataset.video,
-            card.dataset.title
+      if (search) {
+        const term = search.toLowerCase();
+        filtered = filtered.filter(story =>
+          (story.title + " " + story.description + " " + story.category)
+            .toLowerCase().includes(term)
         );
+      }
 
-    });
-});
-
-/* MORE INFORMATION */
-
-function showInfo() {
-    document.getElementById("modalTitle").textContent =
-        "The World of Fame";
-
-    document.getElementById("youtubePlayer").src = "";
-
-    document.getElementById("videoModal").classList.add("show");
-    document.body.style.overflow = "hidden";
-}
-
-/* MY LIST */
-
-function saveCard(event, button) {
-
-    event.stopPropagation();
-
-    const card = button.closest(".video-card");
-    const videoId = card.dataset.video;
-    const title = card.dataset.title;
-
-    const savedRow = document.getElementById("savedRow");
-
-    if ([...savedRow.querySelectorAll(".video-card")].some(
-        item => item.dataset.video === videoId &&
-                item.dataset.title === title
-    )) {
-        return;
+      categoryGrid.innerHTML = filtered.length
+        ? filtered.map(createStoryCard).join("")
+        : '<div class="empty-message">No stories found. Try another search.</div>';
     }
 
-    const copy = card.cloneNode(true);
+    function renderTrending() {
+      const trending = stories.filter(story => story.trending).slice(0, 4);
 
-    copy.addEventListener("click", () => {
-        openPlayer(copy.dataset.video, copy.dataset.title);
-    });
-
-    copy.querySelectorAll("button").forEach(btn => {
-        btn.addEventListener("click", event => {
-            event.stopPropagation();
-
-            const savedCard = btn.closest(".video-card");
-            const isRemove = btn.textContent.trim() === "−";
-
-            if (isRemove) {
-                savedCard.remove();
-
-                if (!savedRow.querySelector(".video-card")) {
-                    savedRow.innerHTML =
-                        '<p style="color:#aaa">Your saved videos will appear here.</p>';
-                }
-            } else {
-                openPlayer(videoId, title);
-            }
-        });
-    });
-
-    copy.querySelectorAll(".card-buttons button")[1].textContent = "−";
-
-    const emptyMessage = savedRow.querySelector("p");
-
-    if (emptyMessage) emptyMessage.remove();
-
-    savedRow.appendChild(copy);
-}
-
-/* SEARCH */
-
-const searchBox = document.getElementById("searchBox");
-const searchBtn = document.getElementById("searchBtn");
-const searchInput = document.getElementById("searchInput");
-
-searchBtn.addEventListener("click", () => {
-    searchBox.classList.toggle("open");
-
-    if (searchBox.classList.contains("open")) {
-        searchInput.focus();
-    } else {
-        searchInput.value = "";
-        clearSearch();
-    }
-});
-
-searchInput.addEventListener("input", performSearch);
-
-function performSearch() {
-
-    const query = searchInput.value.trim().toLowerCase();
-
-    const results = document.getElementById("searchResults");
-    const main = document.getElementById("mainContent");
-    const hero = document.querySelector(".hero");
-    const resultRow = document.getElementById("resultsRow");
-
-    if (!query) {
-        clearSearch();
-        return;
+      trendingList.innerHTML = trending.map((story, index) => `
+        <article class="trending-card" data-story="${story.id}">
+          <span class="trending-number">0${index + 1}</span>
+          <img src="${story.image}" alt="${story.title}" loading="lazy">
+          <h3>${story.title}</h3>
+        </article>
+      `).join("");
     }
 
-    const allCards = [...document.querySelectorAll(
-        "#mainContent .video-card"
-    )];
+    function openStory(id) {
+      const story = stories.find(item => item.id === id);
+      if (!story) return;
 
-    const matches = allCards.filter(card =>
-        card.dataset.title.toLowerCase().includes(query)
-    );
+      document.getElementById("modalImage").src = story.image;
+      document.getElementById("modalImage").alt = story.title;
+      document.getElementById("modalCategory").textContent = story.category;
+      document.getElementById("modalTitle").textContent = story.title;
+      document.getElementById("modalMeta").textContent = story.date + " · Gosip Highlight";
+      document.getElementById("modalDescription").textContent = story.description;
 
-    resultRow.innerHTML = "";
+      modal.classList.add("show");
+      document.body.style.overflow = "hidden";
+      document.getElementById("closeModal").focus();
+    }
 
-    results.style.display = "block";
-    main.style.display = "none";
-    hero.style.display = "none";
+    function closeStory() {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+    }
 
-    matches.forEach(card => {
-        const copy = card.cloneNode(true);
-
-        copy.addEventListener("click", () => {
-            openPlayer(copy.dataset.video, copy.dataset.title);
-        });
-
-        copy.querySelectorAll("button").forEach(btn => {
-            btn.addEventListener("click", event => {
-                event.stopPropagation();
-                openPlayer(copy.dataset.video, copy.dataset.title);
-            });
-        });
-
-        resultRow.appendChild(copy);
+    document.addEventListener("click", event => {
+      const card = event.target.closest("[data-story]");
+      if (card) openStory(card.dataset.story);
     });
 
-    if (matches.length === 0) {
-        resultRow.innerHTML =
-            '<p class="no-results">No videos found. Try another search.</p>';
-    }
-}
+    document.getElementById("closeModal").addEventListener("click", closeStory);
 
-function clearSearch() {
-    document.getElementById("searchResults").style.display = "none";
-    document.getElementById("mainContent").style.display = "block";
-    document.querySelector(".hero").style.display = "flex";
-}
+    modal.addEventListener("click", event => {
+      if (event.target === modal) closeStory();
+    });
 
-/* CURRENT YEAR */
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeStory();
+    });
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      document.getElementById("mainNav").classList.toggle("open");
+    });
 
-</script>
+    document.querySelectorAll("#mainNav a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("mainNav").classList.remove("open");
+      });
+    });
+
+    document.getElementById("searchToggle").addEventListener("click", () => {
+      document.getElementById("searchPanel").classList.toggle("show");
+      if (document.getElementById("searchPanel").classList.contains("show")) {
+        document.getElementById("searchInput").focus();
+      }
+    });
+
+    document.getElementById("searchInput").addEventListener("input", event => {
+      document.querySelectorAll(".filter-button").forEach(button => button.classList.remove("active"));
+      renderCategory("All", event.target.value);
+      document.getElementById("categories").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    document.querySelectorAll(".filter-button").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-button").forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        document.getElementById("searchInput").value = "";
+        renderCategory(button.dataset.category);
+      });
+    });
+
+    document.getElementById("newsletterForm").addEventListener("submit", event => {
+      event.preventDefault();
+      document.getElementById("newsletterMessage").textContent =
+        "Thanks for your interest! Email subscriptions are not connected yet.";
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderLatest();
+    renderCategory();
+    renderTrending();
+  </script>
 
 </body>
 </html>
